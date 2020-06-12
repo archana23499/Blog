@@ -36,12 +36,12 @@ const App = () => {
       <Router>
         <Fragment>
           <Navbar />
+          <Switch>
+            <Route exact path='/' component={Landing} />
 
-          <Route exact path='/' component={Landing} />
+            <section className='container'>
+              <Alert />
 
-          <section className='container'>
-            <Alert />
-            <Switch>
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/profiles' component={Profiles} />
@@ -69,8 +69,8 @@ const App = () => {
               />
               <PrivateRoute exact path='/posts' component={Posts} />
               <PrivateRoute exact path='/posts/:id' component={Post} />
-            </Switch>
-          </section>
+            </section>
+          </Switch>
         </Fragment>
       </Router>
     </Provider>
